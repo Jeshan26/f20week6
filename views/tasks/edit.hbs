@@ -1,0 +1,37 @@
+<h1>{{title}}</h1>
+
+
+
+<form method="POST" >
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="name" id="name" value="{{tasks.name}}" required>
+    </div>
+  </div>
+ 
+
+  <div class="input-group">
+    <label class="input-group-text" for="inputGroupSelect01" >Priority</label>
+  
+  <select  class="custom-select" id="priority" value="{{tasks.priority}}" name="priority"  >
+    <script>
+      console.log("entered");
+      var priority = document.getElementById('piority');
+
+      for(var i= 1 ; i< 5; i++){
+        var option= document.createElement('option');
+        option.innerHTML=i.toString();
+
+        if({{tasks.priority}} == i.toString()){
+              option.selected=true;
+
+        }
+        priority.append(option);
+      }
+    </script>
+  </select>
+  </div>
+</div>
+<button type="submit">Submit</button>
+</form>

@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+<a href="/tasks/form">Create a new task</a>
+<table class="table">
+  <thead>
+    <tr>  
+      <th scope="col">Count</th>
+      <th scope="col">Name</th>
+      <th scope="col">Complete</th>
+      <th scope="col">Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each result}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.complete}}</td>
+      <td>{{this.priority}}</td>
+      <div>
+      <td ><button><a href="/tasks/delete/{{this._id}}" id="delete">Delete</a></button><button><a href="/tasks/edit/{{this._id}}">Edit</a></button></td>
+      </div>
+    </tr>
+
+
+{{/each}}
